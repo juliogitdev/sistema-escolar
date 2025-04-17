@@ -31,3 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Ignorar o arquivo de propriedades com configurações sensíveis (como credenciais de banco de dados)
+src/main/resources/application.properties
+
+# Ignorar arquivos temporários
+*.log
+*.tmp
+*.bak
