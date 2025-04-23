@@ -2,14 +2,24 @@ package com.juliogitdev.sistema_escolar.model;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.*;
+
+
+@Entity
+@Table(name="aluno")
 public class Aluno {
     
+    @Id
     private String matricula;
+    
     private String nome;
     private LocalDate dataNascimento;
     private String email;
     private String senha;
     private String situacao;
+    
+    @ManyToOne
+    @JoinColumn(name="turma_id")
     private Turma turma;
     
     //Metodo construtor
@@ -24,7 +34,11 @@ public class Aluno {
         this.turma = turma;
     }
     
-    //acessa e altera os dados do aluno
+    public Aluno(){}
+    
+    public String getNome(){return nome;}
+    public void setNome(String nome){ this.nome = nome;}
+    
     public String getMatricula(){return matricula;}
     public void setMatricula(String matricula){this.matricula = matricula;}
     

@@ -5,11 +5,11 @@ import java.time.LocalDate;
 public class Matricula {
     private int id;
     private String alunoId;  // FK para Aluno
-    private int turmaId;     // FK para Turma
+    private Long turmaId;     // FK para Turma
     private LocalDate dataMatricula;
 
     // Construtor
-    public Matricula(int id, String alunoId, int turmaId, LocalDate dataMatricula) {
+    public Matricula(int id, String alunoId, Long turmaId, LocalDate dataMatricula) {
         this.id = id;
         this.alunoId = alunoId;
         this.turmaId = turmaId;
@@ -33,11 +33,11 @@ public class Matricula {
         this.alunoId = alunoId;
     }
 
-    public int getTurmaId() {
+    public Long getTurmaId() {
         return turmaId;
     }
 
-    public void setTurmaId(int turmaId) {
+    public void setTurmaId(Long turmaId) {
         this.turmaId = turmaId;
     }
 

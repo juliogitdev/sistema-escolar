@@ -1,14 +1,22 @@
 package com.juliogitdev.sistema_escolar.model;
 
 import java.time.LocalDate;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name="professor")
 public class Professor {
+    
+    @Id
     private String matricula;
     private String nome;
     private String formacao;
     private String email;
     private String senha;
     private LocalDate data_admissao;
+    
+    public Professor(){  
+    };
     
     //Metodo construtor
     public Professor(String matricula, String nome, String formacao, String email, String senha, LocalDate data_admissao){
@@ -33,9 +41,11 @@ public class Professor {
     public String getEmail(){ return email;}
     public void setEmail(String email) { this.email = email; }
     
+    public String getSenha() { return senha;}
     public void setSenha(String senha){ this.senha = senha; }
     
     public LocalDate getDataAdmissao() { return data_admissao; }
+    public void setDataAdmissao(LocalDate data_admissao){ this.data_admissao = data_admissao;}
     
     @Override
     public String toString() {

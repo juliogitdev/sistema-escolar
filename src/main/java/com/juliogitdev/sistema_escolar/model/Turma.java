@@ -1,25 +1,35 @@
 package com.juliogitdev.sistema_escolar.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="turma")
 public class Turma {
-    private int id;
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
     private String nome;
     private int anoLetivo;
     private String turno;
     
-    //Método construtor
-    public Turma(int id, String nome, int anoLetivo, String turno){
+    public Turma(){}
+    
+    //Método construtor com parametros
+    public Turma(Long id, String nome, int anoLetivo, String turno){
         this.id = id;
         this.nome = nome;
         this.anoLetivo = anoLetivo;
         this.turno = turno;
     }
-    
+
     //acessa e altera os dados da turma
-    public int getId(){
+    public Long getId(){
         return id;
     }
     
-    public void setId(int id){
+    public void setId(Long id){
         this.id = id;
     }
     
